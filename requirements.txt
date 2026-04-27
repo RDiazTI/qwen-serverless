@@ -1,0 +1,2 @@
+runpod>=1.7.0
+hf-transfer>=0.1.6
