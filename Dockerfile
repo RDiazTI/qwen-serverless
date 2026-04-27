@@ -5,7 +5,7 @@ FROM vllm/vllm-openai:latest
 ENV PYTHONUNBUFFERED=1
 ENV HF_HUB_ENABLE_HF_TRANSFER=1
 
-# Instalar runpod SDK para el handler serverless
+# Instalar runpod SDK
 RUN pip install --no-cache-dir runpod hf-transfer
 
 # Copiar el handler
@@ -13,4 +13,4 @@ COPY handler.py /handler.py
 
 # Override del entrypoint de vLLM para usar nuestro handler
 ENTRYPOINT []
-CMD ["python", "-u", "/handler.py"]
+CMD ["python3", "-u", "/handler.py"]

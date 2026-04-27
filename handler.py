@@ -30,7 +30,8 @@ VLLM_BASE = f"http://{VLLM_HOST}:{VLLM_PORT}/v1"
 def start_vllm():
     """Lanza vLLM como subprocess."""
     cmd = [
-        "vllm", "serve", MODEL_NAME,
+        "python3", "-m", "vllm.entrypoints.openai.api_server",
+        "--model", MODEL_NAME,
         "--host", VLLM_HOST,
         "--port", str(VLLM_PORT),
         "--max-model-len", MAX_MODEL_LEN,
