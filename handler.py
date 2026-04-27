@@ -35,6 +35,7 @@ def start_vllm():
         "--host", VLLM_HOST,
         "--port", str(VLLM_PORT),
         "--max-model-len", MAX_MODEL_LEN,
+        "--max-num-batched-tokens", "8192",
         "--quantization", QUANTIZATION,
         "--dtype", DTYPE,
         "--kv-cache-dtype", KV_CACHE_DTYPE,
